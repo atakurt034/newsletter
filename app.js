@@ -31,7 +31,7 @@ app.post('/', (req, res) => {
 
   const run = async () => {
     const response = await mailchimp.lists
-      .batchListMembers('5319835474', {
+      .batchListMembers(process.env.BATCH_LIST, {
         members: [
           {
             email_address: email,
